@@ -20,9 +20,16 @@ while True:
     data = r.json()
     jsonObj = data['results']
     for item in jsonObj:
-        for i in range(0, len(item['abstract'])):
-            lcd_text = item['abstract'][i:(i + 16)] + '.'
+        x = 1
+        for i in range(0, len(item['title'])):
+            lcd_text = item['title'][i:(i + 16)] + '.'
             mylcd.lcd_display_string(lcd_text, 1)
-            mylcd.lcd_display_string('NYT Headlines', 2)
-            sleep(0.3)
-        sleep(1.0)
+            sleep(0.1)
+            x += 1
+            print x
+        if x > 1:
+            for i in range(0, len(item['abstract'])):
+                lcd_text2 = item['abstract'][i:(i + 16)] + '.'
+                mylcd.lcd_display_string(lcd_text2, 2)
+                sleep(0.1)
+                x = 1
