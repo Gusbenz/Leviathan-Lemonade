@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import os
 import I2C_LCD_driver
 import requests
 import json
@@ -11,7 +12,7 @@ mylcd = I2C_LCD_driver.lcd()
 str_pad = " " * 16
 
 # NYTimes API key
-apiKey = '67aed2877e994f73847f4f7d45a697e0'
+apiKey = os.environ['NY_TIMES_API_KEY']
 
 while True:
     r = requests.get(
