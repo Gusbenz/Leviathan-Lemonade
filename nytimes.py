@@ -22,13 +22,13 @@ while True:
         for i in range(0, len(item['title'])):
             lcd_text = item['title'][i:(i + 16)] + ':'
             mylcd.lcd_display_string(lcd_text, 1)
-            sleep(0.2)
+            sleep(0.4)
             mylcd.lcd_clear()
             x += 1
         if x > 1:
             for i in range(0, len(item['abstract'])):
                 lcd_text2 = item['abstract'][i:(i + 16)] + '.'
                 mylcd.lcd_display_string(lcd_text2, 2)
-                sleep(0.3)
+                sleep(0.4)
                 mylcd.lcd_clear()
                 x = 1
