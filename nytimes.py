@@ -12,6 +12,7 @@ mylcd = I2C_LCD_driver.lcd()
 apiKey = os.environ['NY_TIMES_API_KEY']
 
 while True:
+    mylcd.lcd_clear()
     r = requests.get(
         'https://api.nytimes.com/svc/topstories/v1/world.json?api-key=' + apiKey)
     data = r.json()
