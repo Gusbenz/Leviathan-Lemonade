@@ -20,7 +20,7 @@ apiKey = os.environ['NY_TIMES_API_KEY']
 ####
 
 while True:
-    if hour % 1 == 0 and minute !== 00:
+    if hour % 1 == 0 and minute != 00:
         mylcd.lcd_clear()
         r = requests.get(
         'https://api.nytimes.com/svc/topstories/v1/world.json?api-key=' + apiKey)
@@ -42,4 +42,4 @@ while True:
                     mylcd.lcd_clear()
                     x = 1
     else:
-        mylcd.lcd_display_string('The Hour is not 14')
+        mylcd.lcd_display_string('Not Top Hour')
